@@ -1,6 +1,6 @@
 import WelcomeMessage from './components/WelcomeMessage'
 import Header from './components/Header'
-import Main from './components/Main'
+import MainContent from './components/MainContent'
 import Footer from './components/Footer'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
@@ -34,7 +34,7 @@ function App() {
       </p>
       <WelcomeMessage />
       <Header />
-      <Main />
+      <MainContent />
       <Footer />
     </>
   )
