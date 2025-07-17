@@ -1,5 +1,5 @@
 
-import ProfilePage from './ProfilePage';
+import ProfilePage from './components/ProfilePage';
 import UserContext from './components/UserContext';
 import './App.css';
 
