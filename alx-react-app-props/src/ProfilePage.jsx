@@ -1,4 +1,4 @@
-import UserInfo from './UserInfo';
+{ /*import UserInfo from './UserInfo';
 import UserDetails from './UserDetails';
 
 function ProfilePage() {
@@ -8,4 +8,21 @@ function ProfilePage() {
   </div>;
 }
 
-export default ProfilePage;
+export default ProfilePage; */}
+
+import { useContext } from 'react';
+import UserContext from './components/UserContext';
+
+function UserProfile() {
+  const userData = useContext(UserContext);
+
+  return (
+    <div>
+      <h2>User Profile</h2>
+      <p>Name: {userData.name}</p>
+      <p>Email: {userData.email}</p>
+    </div>
+  );
+}
+
+export default UserProfile;
