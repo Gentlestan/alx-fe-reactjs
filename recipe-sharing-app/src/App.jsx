@@ -2,13 +2,14 @@
 import RecipeList from './components/RecipeList'
 import AddRecipeForm from './components/AddRecipeForm'
 import RecipeDetails from './components/RecipeDetails'
-import { Routes, Route } from 'react-router-dom'
+import {createBrowserRouter, Routes, Route, BrowserRouter } from 'react-router-dom'
 import './App.css'
 
 function App() {
   
  console.log("App is rendering");
   return (
+   <BrowserRouter>
    <div>
    <AddRecipeForm/>
      <Routes>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/recipe/:id" element={<RecipeDetails />} />
       </Routes>
    </div>
+   </BrowserRouter> 
   )
 }
 
