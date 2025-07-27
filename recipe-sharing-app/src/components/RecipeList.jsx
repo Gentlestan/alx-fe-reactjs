@@ -4,7 +4,9 @@ import { Link } from "react-router-dom"
 
 const RecipeList = () => {
     
-    const recipes = useRecipeStore(state => state.recipes)
+    //const recipes = useRecipeStore(state => state.recipes)
+    const recipes = useRecipeStore(state => state.filteredRecipes)
+
 
      const recipeStyle = {
         display: 'flex',
@@ -18,6 +20,7 @@ const RecipeList = () => {
     }
 
   return (
+    
     <div style={recipeStyle}>
       {recipes.map(recipe => (
         <div key={recipe.id}>
