@@ -25,25 +25,14 @@ function Home() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center bg-red-300 my-8">
-      <h1 className='my-2'>GitHub User Search</h1>
-      <Search onSearch={handleSearch} />
-      {loading && <p>Loading...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {userData && (
-        <div className='text-center'>
-          <h2>{userData.login}</h2>
-          <div className='my-2'>
-          <img src={userData.avatar_url} alt={userData.login} width="170" />
-          </div>
-          <p>Name: {userData.name || 'N/A'}</p>
-          <p>Location: {userData.location || 'N/A'}</p>
-          <p>Public Repos: {userData.public_repos}</p>
-          <a href={userData.html_url} target="_blank" rel="noreferrer">
-            View Profile
-          </a>
-        </div>
-      )}
+    <div className="flex flex-col justify-center items-center bg-red-300 my-4">
+      <h1 className=''>GitHub User Search</h1>
+      <Search
+       onSearch={handleSearch}
+       userData={userData}
+       loading={loading}
+       error={error}
+      />
     </div>
   );
 }
