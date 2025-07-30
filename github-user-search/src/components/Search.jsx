@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 
 
-const formStyle = {
-    textAlign: 'center'
-}
 function Search({ onSearch }) {
   const [username, setUsername] = useState('');
 
@@ -14,15 +11,16 @@ function Search({ onSearch }) {
   };
 
   return (
-    <form style={formStyle} onSubmit={handleSubmit}>
+    <form className='flex flex-col justify-center items-center my-2' onSubmit={handleSubmit}>
       <input
+        className='p-2 border-2 border-gray-500'
         type="text"
         placeholder="Enter GitHub username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         required
       />
-      <button type="submit">Search</button>
+      <button type="submit" className='px-2'>Search</button>
     </form>
   );
 }

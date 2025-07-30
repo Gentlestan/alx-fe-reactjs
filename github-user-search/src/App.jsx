@@ -4,9 +4,6 @@ import { fetchUserData } from './services/githubService'
 import { useState } from 'react'
 import './App.css'
 
-const formStyle = {
-    textAlign: 'center'
-}
 
 function Home() {
   const [userData, setUserData] = useState(null);
@@ -28,15 +25,17 @@ function Home() {
   };
 
   return (
-    <div style={formStyle}>
-      <h1>GitHub User Search</h1>
+    <div className="flex flex-col justify-center items-center bg-red-300 my-8">
+      <h1 className='my-2'>GitHub User Search</h1>
       <Search onSearch={handleSearch} />
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {userData && (
-        <div>
+        <div className='text-center'>
           <h2>{userData.login}</h2>
-          <img src={userData.avatar_url} alt={userData.login} width="150" />
+          <div className='my-2'>
+          <img src={userData.avatar_url} alt={userData.login} width="170" />
+          </div>
           <p>Name: {userData.name || 'N/A'}</p>
           <p>Location: {userData.location || 'N/A'}</p>
           <p>Public Repos: {userData.public_repos}</p>
