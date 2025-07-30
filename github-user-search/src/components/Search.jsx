@@ -24,7 +24,7 @@ function Search({ onSearch, userData, loading, error }) {
       </form>
 
       {loading && <p>Loading...</p>}
-      {error && <p className="text-red-500">{error}</p>}
+      {error && <p className="text-red-500">Looks like we cant find the user</p>}
 
       {userData && (
         <div className="text-center">
