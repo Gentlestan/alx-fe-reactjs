@@ -10,6 +10,7 @@ import './App.css'
 
 
 function App() {
+  console.log("App is working")
   const [count, setCount] = useState(0)
 
   return (
