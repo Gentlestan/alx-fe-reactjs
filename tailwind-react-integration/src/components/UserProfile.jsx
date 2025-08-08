@@ -1,6 +1,6 @@
 function UserProfile() {
   return (
-    <div className="bg-gray-100 p-8 max-w-[400px] mx-auto my-20 rounded-lg shadow">
+    <div className="bg-gray-100 p-8 max-w-sm mx-auto my-20 rounded-lg shadow-lg">
       <img 
       src="https://picsum.photos/300/200" 
       alt="User" 
