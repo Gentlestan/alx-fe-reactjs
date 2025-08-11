@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Jollof Rice",
+    "summary": "A West African rice dish cooked in a rich tomato and pepper sauce, often served with chicken or fish.",
+    "imageKey": "jollof-rice"
+  },
+  {
+    "id": 2,
+    "title": "Egusi Soup",
+    "summary": "A hearty soup made with ground melon seeds, leafy vegetables, and assorted meats, served with pounded yam or fufu.",
+    "imageKey": "egusi-soup"
+  },
+  {
+    "id": 3,
+    "title": "Suya",
+    "summary": "Spicy skewered beef grilled to perfection, a popular Nigerian street food.",
+    "imageKey": "suya"
+  },
+  {
+    "id": 4,
+    "title": "Efo Riro",
+    "summary": "A rich spinach and tomato stew cooked with assorted meats and seasonings.",
+    "imageKey": "efo-riro"
+  },
+  {
+    "id": 5,
+    "title": "Moi Moi",
+    "summary": "A steamed bean pudding made from blended beans, peppers, onions, and spices.",
+    "imageKey": "moi"
+  },
+  {
+    "id": 6,
+    "title": "Bitterleaf Soup",
+    "summary": "A traditional Nigerian soup made with bitter leaves, assorted meats, stockfish, and thickened with cocoyam paste.",
+    "imageKey": "bitterleaf"
+  },
+  {
+    "id": 7,
+    "title": "Boli",
+    "summary": "Charcoal-roasted plantains, often served with groundnut sauce or pepper sauce.",
+    "imageKey": "boli"
+  },
+  {
+    "id": 8,
+    "title": "Okra Soup",
+    "summary": "A thick, slippery soup made from okra pods, palm oil, and assorted meats or fish.",
+    "imageKey": "okra-soup"
+  },
+  {
+    "id": 9,
+    "title": "Pounded Yam and Nsala Soup",
+    "summary": "Smooth, stretchy pounded yam served with a light peppery white soup made with fish or chicken.",
+    "imageKey": "nsala-soup"
+  },
+  {
+    "id": 10,
+    "title": "Nkwobi",
+    "summary": "A spicy cow foot delicacy cooked with palm oil, potash, and traditional spices.",
+    "imageKey": "nkwobi"
+  }
+]
