@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import recipesData from "../data.json"; // top-level import
 
-export const Home = () => {
+export const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    // dynamically import data.json
-    import("../data.json")
-      .then((module) => setRecipes(module.default))
-      .catch((err) => console.error("Failed to load recipes:", err));
+    setRecipes(recipesData); // just load the imported JSON
   }, []);
 
   return (
