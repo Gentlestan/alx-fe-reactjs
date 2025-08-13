@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Jollof Rice",
     "summary": "A West African rice dish cooked in a rich tomato and pepper sauce, often served with chicken or fish.",
-    "imageKey": "jollof-rice",
+    "image": "https://i.imgur.com/nJpgLqg.jpeg",
     "ingredients": [
       "2 cups long-grain parboiled rice (e.g., Golden Sella)",
       "1/4 cup vegetable oil",
@@ -36,7 +36,7 @@
     "id": 2,
     "title": "Egusi Soup",
     "summary": "A hearty soup made with ground melon seeds, leafy vegetables, and assorted meats, served with pounded yam or fufu.",
-    "imageKey": "egusi-soup",
+    "image": "https://i.imgur.com/gYW1i2I.jpeg",
     "ingredients": [
       "2 cups ground egusi (melon seeds)",
       "500g assorted meats (beef, goat meat, tripe, etc.)",
@@ -68,7 +68,7 @@
     "id": 3,
     "title": "Suya",
     "summary": "Spicy skewered beef grilled to perfection, a popular Nigerian street food.",
-    "imageKey": "suya",
+    "image": "https://i.imgur.com/fJPYTOB.jpeg",
     "ingredients": [
       "500g beef (sirloin or flank steak)",
       "3 tablespoons ground roasted peanuts (unsalted)",
@@ -95,7 +95,7 @@
     "id": 4,
     "title": "Efo Riro",
     "summary": "A rich spinach and tomato stew cooked with assorted meats and seasonings.",
-    "imageKey": "efo-riro",
+    "image": "https://i.imgur.com/musFQKk.jpeg",
     "ingredients": [
       "500g spinach (fresh or frozen) or Nigerian pumpkin leaves (ugu)",
       "500g assorted meats (beef, goat meat, tripe)",
@@ -125,7 +125,7 @@
     "id": 5,
     "title": "Moi Moi",
     "summary": "A steamed bean pudding made from blended beans, peppers, onions, and spices.",
-    "imageKey": "moi",
+    "image": "https://i.imgur.com/F8is6cE.jpeg",
     "ingredients": [
       "3 cups peeled beans (black-eyed peas or brown beans)",
       "2 red bell peppers",
@@ -154,7 +154,7 @@
     "id": 6,
     "title": "Bitterleaf Soup",
     "summary": "A traditional Nigerian soup made with bitter leaves, assorted meats, stockfish, and thickened with cocoyam paste.",
-    "imageKey": "bitterleaf",
+    "image": "https://i.imgur.com/jRvKI34.jpeg",
     "ingredients": [
       "500g assorted meats (beef, goat meat, tripe, etc.)",
       "200g stockfish (pre-soaked)",
@@ -183,7 +183,7 @@
     "id": 7,
     "title": "Boli",
     "summary": "Charcoal-roasted plantains, often served with groundnut sauce or pepper sauce.",
-    "imageKey": "boli",
+    "image": "https://i.imgur.com/N3c7AMp.jpeg",
     "ingredients": [
       "4 ripe plantains",
       "1/2 cup groundnuts (peanuts), roasted and peeled",
@@ -201,7 +201,7 @@
     "id": 8,
     "title": "Okra Soup",
     "summary": "A thick, slippery soup made from okra pods, palm oil, and assorted meats or fish.",
-    "imageKey": "okra-soup",
+    "image": "https://i.imgur.com/g9Kcj0n.jpeg",
     "ingredients": [
       "500g fresh okra, finely chopped or grated",
       "300g assorted meats (beef, goat meat, tripe, etc.)",
@@ -229,7 +229,7 @@
     "id": 9,
     "title": "Pounded Yam and Nsala Soup",
     "summary": "Smooth, stretchy pounded yam served with a light peppery white soup made with fish or chicken.",
-    "imageKey": "nsala-soup",
+    "image": "https://i.imgur.com/VeBT9KP.jpeg",
     "ingredients": [
       "1 large catfish (or 1 whole chicken, cut into pieces)",
       "2 tablespoons ground crayfish",
@@ -258,7 +258,7 @@
     "id": 10,
     "title": "Nkwobi",
     "summary": "A spicy cow foot delicacy cooked with palm oil, potash, and traditional spices.",
-    "imageKey": "nkwobi",
+    "image": "https://i.imgur.com/j2Ma4lP.jpeg",
     "ingredients": [
       "2 kg cow foot (cut into pieces)",
       "2 tablespoons powdered potash (Akanwu)",

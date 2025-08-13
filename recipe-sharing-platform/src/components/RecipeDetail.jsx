@@ -1,9 +1,18 @@
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { recipesWithImages } from "../utils/recipeWithImage";
 
 export default function RecipeDetail() {
   const { id } = useParams();
-  const recipe = recipesWithImages.find((r) => String(r.id) === id);
+  const [recipe, setRecipe] = useState(null);
+
+  useEffect(() => {
+    import("../data.json")
+      .then((module) => {
+        const found = module.default.find((r) => String(r.id) === id);
+        setRecipe(found || null);
+      })
+      .catch((err) => console.error("Failed to load recipes:", err));
+  }, [id]);
 
   if (!recipe) {
     return <p className="text-center text-gray-400 mt-10">Recipe not found.</p>;
@@ -11,7 +20,9 @@ export default function RecipeDetail() {
 
   return (
     <div className="max-w-4xl mx-auto p-4">
-      <h1 className="text-gray-800 text-3xl font-bold text-center mb-6">{recipe.title}</h1>
+      <h1 className="text-gray-800 text-3xl font-bold text-center mb-6">
+        {recipe.title}
+      </h1>
       <img
         src={recipe.image}
         alt={recipe.title}
