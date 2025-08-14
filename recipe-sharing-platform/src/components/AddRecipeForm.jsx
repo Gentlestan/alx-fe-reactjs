@@ -85,6 +85,7 @@ export const AddRecipeForm = () => {
         <div>
           <label className="block mb-1 font-semibold">Preparation Steps (period separated)</label>
           <textarea
+            name="steps"
             value={steps}
             onChange={(e) => setSteps(e.target.value)}
             className={`w-full p-2 rounded bg-gray-700 border ${
