@@ -14,7 +14,7 @@ const [confirmPassword, setConfirmPassword] = useState('');
   const validate = () => {
     let newError = {}
 
-    if(!username.trim()){
+    if(!username){
         newError.username = "name is required"
     }
     if(!email){
