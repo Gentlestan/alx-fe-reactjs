@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 
 function RegistrationForm() {
-  const [formdata, setFormdata] = useState({
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-  });
+ const [username, setUsername] = useState('');
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
+const [confirmPassword, setConfirmPassword] = useState('');
+
 
   const [error, setError] = useState({});
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormdata({ ...formdata, [name]: value });
-  };
+  
 
   const validate = () => {
     let newError = {}
@@ -60,8 +56,8 @@ function RegistrationForm() {
             type="text"
             id="username"
             name="username"
-            value={formdata.username}
-            onChange={handleChange}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             required
             className="border p-2 rounded w-full"
           />
@@ -75,8 +71,8 @@ function RegistrationForm() {
             type="email"
             id="email"
             name="email"
-            value={formdata.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
             className="border p-2 rounded w-full"
           />
@@ -90,8 +86,8 @@ function RegistrationForm() {
             type="password"
             id="password"
             name="password"
-            value={formdata.password}
-            onChange={handleChange}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
             className="border p-2 rounded w-full"
           />
@@ -105,8 +101,8 @@ function RegistrationForm() {
             type="password"
             id="confirmPassword"
             name="confirmPassword"
-            value={formdata.confirmPassword}
-            onChange={handleChange}
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             required
             className="border p-2 rounded w-full"
           />
