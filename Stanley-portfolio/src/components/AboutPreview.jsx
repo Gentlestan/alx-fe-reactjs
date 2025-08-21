@@ -3,31 +3,29 @@ import { Link } from "react-router-dom";
 
 const AboutPreview = () => {
   return (
-    <div className=" mt-8 shadow-md bg-white py-6 rounded-md border  flex flex-col gap-3">
-      <h2 className="text-2xl font-bold mb-4 w-3/5 border border-red-700">About Me</h2>
+    <div className="mt-8 shadow-lg bg-gradient-to-r from-green-50 via-white to-green-50 py-8 px-6 rounded-2xl border border-gray-100 flex flex-col gap-6">
+      <h2 className="text-3xl font-extrabold text-gray-800 mb-4 text-center">
+        About Me
+      </h2>
 
-      <div className="space-y-4 w-3/5 flex flex-row align-center gap-3">
-      <div>
+      <div className="flex flex-col sm:flex-row gap-6 justify-center">
         {/* Past Career Card */}
         <Link
           to="/about"
-          className="block p-4 rounded-md border border-gray-200 hover:shadow-lg hover:border-green-500 transition"
+          className="flex-1 block p-6 rounded-xl bg-white border border-gray-200 hover:shadow-2xl hover:border-green-400 transition-transform transform hover:scale-105"
         >
-          <h3 className="font-semibold text-lg">Past Career</h3>
-          <p className="text-gray-600">Solar and CCTV Entrepreneur</p>
+          <h3 className="font-bold text-xl text-green-700">Past Career</h3>
+          <p className="text-gray-600 mt-2">Solar and CCTV Entrepreneur</p>
         </Link>
-        </div>
 
         {/* Tech Career Card */}
-        <div>
         <Link
           to="/about"
-          className="block p-4 rounded-md border border-gray-200 hover:shadow-lg hover:border-green-500 transition"
+          className="flex-1 block p-6 rounded-xl bg-white border border-gray-200 hover:shadow-2xl hover:border-green-400 transition-transform transform hover:scale-105"
         >
-          <h3 className="font-semibold text-lg">Tech Career</h3>
-          <p className="text-gray-600">ALX and Scrimba Graduate</p>
+          <h3 className="font-bold text-xl text-green-700">Tech Career</h3>
+          <p className="text-gray-600 mt-2">ALX and Scrimba Graduate</p>
         </Link>
-        </div>
       </div>
     </div>
   );

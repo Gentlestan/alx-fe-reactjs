@@ -1,0 +1,128 @@
+import React, { useState } from 'react';
+
+function RegistrationForm() {
+  const [formdata, setFormdata] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const [error, setError] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormdata({ ...formdata, [name]: value });
+  };
+
+  const validate = () => {
+    let newError = {}
+
+    if(!formdata.username.trim()){
+        newError.username = "name is required"
+    }
+    if(!formdata.email){
+      newError.email = "email is required"
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formdata.email)){
+      newError.email = "invalid email"
+    }
+    if(formdata.password.length < 6){
+      newError.password = "password must be greater than 6"
+    }
+    if(formdata.confirmPassword !== formdata.password){
+      newError.confirmPassword = 'password mismatch'
+    }
+    return newError
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setError(validationErrors);
+      
+    }else {
+      console.log('Form submitted successfully:', formdata);
+    }
+  };
+
+  return (
+    <div className="flex justify-center items-center min-h-screen bg-gray-50">
+      <form 
+        onSubmit={handleSubmit} 
+        className="flex flex-col gap-4 p-8 rounded-lg shadow-lg bg-white w-full max-w-md"
+      >
+        {/* Name */}
+        <div className="flex items-center gap-2">
+          <label htmlFor="username" className="w-32 font-bold">Name:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={formdata.username}
+            onChange={handleChange}
+            required
+            className="border p-2 rounded w-full"
+          />
+          {error.username && <span className="text-red-500 text-sm">{error.username}</span>}
+        </div>
+
+        {/* Email */}
+        <div className="flex items-center gap-2">
+          <label htmlFor="email" className="w-32 font-bold">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formdata.email}
+            onChange={handleChange}
+            required
+            className="border p-2 rounded w-full"
+          />
+          {error.email && <span className="text-red-500 text-sm">{error.email}</span>}
+        </div>
+
+        {/* Password */}
+        <div className="flex items-center gap-2">
+          <label htmlFor="password" className="w-32 font-bold">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formdata.password}
+            onChange={handleChange}
+            required
+            className="border p-2 rounded w-full"
+          />
+          {error.password && <span className="text-red-500 text-sm">{error.password}</span>}
+        </div>
+
+        {/* Confirm Password */}
+        <div className="flex items-center gap-2">
+          <label htmlFor="confirmPassword" className="w-32 font-bold">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            value={formdata.confirmPassword}
+            onChange={handleChange}
+            required
+            className="border p-2 rounded w-full"
+          />
+          {error.confirmPassword && <span className="text-red-500 text-sm">{error.confirmPassword}</span>}
+        </div>
+
+        {/* Button */}
+        <button 
+          type="submit" 
+          className="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded font-semibold"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default RegistrationForm;
