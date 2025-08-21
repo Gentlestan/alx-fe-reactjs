@@ -14,18 +14,18 @@ const [confirmPassword, setConfirmPassword] = useState('');
   const validate = () => {
     let newError = {}
 
-    if(!formdata.username.trim()){
+    if(!username.trim()){
         newError.username = "name is required"
     }
-    if(!formdata.email){
+    if(!email){
       newError.email = "email is required"
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formdata.email)){
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
       newError.email = "invalid email"
     }
-    if(formdata.password.length < 6){
+    if(password.length < 6){
       newError.password = "password must be greater than 6"
     }
-    if(formdata.confirmPassword !== formdata.password){
+    if(confirmPassword !== password){
       newError.confirmPassword = 'password mismatch'
     }
     return newError
@@ -39,7 +39,7 @@ const [confirmPassword, setConfirmPassword] = useState('');
       setError(validationErrors);
       
     }else {
-      console.log('Form submitted successfully:', formdata);
+     
     }
   };
 
