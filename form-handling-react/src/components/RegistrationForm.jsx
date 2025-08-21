@@ -14,15 +14,15 @@ const [confirmPassword, setConfirmPassword] = useState('');
   const validate = () => {
     let newError = {}
 
-    if(!username){
+    if (!username.trim()){
         newError.username = "name is required"
     }
-    if(!email){
+    if (!email){
       newError.email = "email is required"
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
       newError.email = "invalid email"
     }
-    if(password.length < 6){
+    if (password.length < 6){
       newError.password = "password must be greater than 6"
     }
     if(confirmPassword !== password){
