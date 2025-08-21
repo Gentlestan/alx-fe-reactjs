@@ -22,9 +22,11 @@ const [confirmPassword, setConfirmPassword] = useState('');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
       newError.email = "invalid email"
     }
-    if (password.length < 6){
-      newError.password = "password must be greater than 6"
-    }
+    if (!password) {
+  newError.password = "Password is required";
+} else if (password.length < 6) {
+  newError.password = "Password must be greater than 6";
+}
     if (confirmPassword !== password){
       newError.confirmPassword = 'password mismatch'
     }
