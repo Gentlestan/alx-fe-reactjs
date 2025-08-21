@@ -25,7 +25,7 @@ const [confirmPassword, setConfirmPassword] = useState('');
     if (password.length < 6){
       newError.password = "password must be greater than 6"
     }
-    if(confirmPassword !== password){
+    if (confirmPassword !== password){
       newError.confirmPassword = 'password mismatch'
     }
     return newError
