@@ -1,32 +1,18 @@
 import React from "react";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 
 function FormikForm() {
-  const validate = (values) => {
-    let errors = {};
-
-    if (!values.username.trim()) {
-      errors.username = "Name is required";
-    }
-
-    if (!values.email) {
-      errors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-      errors.email = "Invalid email";
-    }
-
-    if (!values.password) {
-      errors.password = "Password is required";
-    } else if (values.password.length < 6) {
-      errors.password = "Password must be greater than 6";
-    }
-
-    if (values.confirmPassword !== values.password) {
-      errors.confirmPassword = "Password mismatch";
-    }
-
-    return errors;
-  };
+  const validationSchema = Yup.object({
+    username: Yup.string().required("Name is required"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    password: Yup.string()
+      .min(6, "Password must be greater than 6 characters")
+      .required("Password is required"),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref("password"), null], "Password mismatch")
+      .required("Confirm Password is required"),
+  });
 
   const formik = useFormik({
     initialValues: {
@@ -35,94 +21,106 @@ function FormikForm() {
       password: "",
       confirmPassword: "",
     },
-    validate,
+    validationSchema,
     onSubmit: (values) => {
       console.log("Form submitted successfully:", values);
     },
   });
 
-  const el = React.createElement;
-
-  return el(
+  return React.createElement(
     "div",
     { className: "flex justify-center items-center min-h-screen bg-gray-50" },
-    el(
+    React.createElement(
       "form",
       {
         onSubmit: formik.handleSubmit,
-        className: "flex flex-col gap-4 p-8 rounded-lg shadow-lg bg-white w-full max-w-md",
+        className:
+          "flex flex-col gap-4 p-8 rounded-lg shadow-lg bg-white w-full max-w-md",
       },
-      // Name
-      el(
+      // Username
+      React.createElement(
         "div",
-        { className: "flex items-center gap-2" },
-        el("label", { htmlFor: "username", className: "w-32 font-bold" }, "Name:"),
-        el("input", {
+        { className: "flex flex-col" },
+        React.createElement("label", { htmlFor: "username", className: "font-bold" }, "Name:"),
+        React.createElement("input", {
           type: "text",
           id: "username",
           name: "username",
-          ...formik.getFieldProps("username"),
+          value: formik.values.username,
+          onChange: formik.handleChange,
+          onBlur: formik.handleBlur,
           className: "border p-2 rounded w-full",
         }),
-        formik.touched.username && formik.errors.username
-          ? el("span", { className: "text-red-500 text-sm" }, formik.errors.username)
-          : null
+        React.createElement(
+          "span",
+          { className: "text-red-500 text-sm" },
+          formik.touched.username && formik.errors.username ? formik.errors.username : null
+        )
       ),
       // Email
-      el(
+      React.createElement(
         "div",
-        { className: "flex items-center gap-2" },
-        el("label", { htmlFor: "email", className: "w-32 font-bold" }, "Email:"),
-        el("input", {
+        { className: "flex flex-col" },
+        React.createElement("label", { htmlFor: "email", className: "font-bold" }, "Email:"),
+        React.createElement("input", {
           type: "email",
           id: "email",
           name: "email",
-          ...formik.getFieldProps("email"),
+          value: formik.values.email,
+          onChange: formik.handleChange,
+          onBlur: formik.handleBlur,
           className: "border p-2 rounded w-full",
         }),
-        formik.touched.email && formik.errors.email
-          ? el("span", { className: "text-red-500 text-sm" }, formik.errors.email)
-          : null
+        React.createElement(
+          "span",
+          { className: "text-red-500 text-sm" },
+          formik.touched.email && formik.errors.email ? formik.errors.email : null
+        )
       ),
       // Password
-      el(
+      React.createElement(
         "div",
-        { className: "flex items-center gap-2" },
-        el("label", { htmlFor: "password", className: "w-32 font-bold" }, "Password:"),
-        el("input", {
+        { className: "flex flex-col" },
+        React.createElement("label", { htmlFor: "password", className: "font-bold" }, "Password:"),
+        React.createElement("input", {
           type: "password",
           id: "password",
           name: "password",
-          ...formik.getFieldProps("password"),
+          value: formik.values.password,
+          onChange: formik.handleChange,
+          onBlur: formik.handleBlur,
           className: "border p-2 rounded w-full",
         }),
-        formik.touched.password && formik.errors.password
-          ? el("span", { className: "text-red-500 text-sm" }, formik.errors.password)
-          : null
+        React.createElement(
+          "span",
+          { className: "text-red-500 text-sm" },
+          formik.touched.password && formik.errors.password ? formik.errors.password : null
+        )
       ),
       // Confirm Password
-      el(
+      React.createElement(
         "div",
-        { className: "flex items-center gap-2" },
-        el("label", { htmlFor: "confirmPassword", className: "w-32 font-bold" }, "Confirm Password:"),
-        el("input", {
+        { className: "flex flex-col" },
+        React.createElement("label", { htmlFor: "confirmPassword", className: "font-bold" }, "Confirm Password:"),
+        React.createElement("input", {
           type: "password",
           id: "confirmPassword",
           name: "confirmPassword",
-          ...formik.getFieldProps("confirmPassword"),
+          value: formik.values.confirmPassword,
+          onChange: formik.handleChange,
+          onBlur: formik.handleBlur,
           className: "border p-2 rounded w-full",
         }),
-        formik.touched.confirmPassword && formik.errors.confirmPassword
-          ? el("span", { className: "text-red-500 text-sm" }, formik.errors.confirmPassword)
-          : null
+        React.createElement(
+          "span",
+          { className: "text-red-500 text-sm" },
+          formik.touched.confirmPassword && formik.errors.confirmPassword ? formik.errors.confirmPassword : null
+        )
       ),
       // Submit button
-      el(
+      React.createElement(
         "button",
-        {
-          type: "submit",
-          className: "bg-blue-500 hover:bg-blue-600 text-white p-2 rounded font-semibold",
-        },
+        { type: "submit", className: "bg-blue-500 hover:bg-blue-600 text-white p-2 rounded font-semibold" },
         "Register"
       )
     )
