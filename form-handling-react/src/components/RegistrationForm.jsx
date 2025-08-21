@@ -7,7 +7,7 @@ const [password, setPassword] = useState('');
 const [confirmPassword, setConfirmPassword] = useState('');
 
 
-  const [error, setError] = useState({});
+  const [errors, setErrors] = useState({});
 
   
 
@@ -36,7 +36,7 @@ const [confirmPassword, setConfirmPassword] = useState('');
     // Handle form submission
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
-      setError(validationErrors);
+      setErrors(validationErrors);
       
     }else {
      
@@ -61,7 +61,7 @@ const [confirmPassword, setConfirmPassword] = useState('');
             required
             className="border p-2 rounded w-full"
           />
-          {error.username && <span className="text-red-500 text-sm">{error.username}</span>}
+          {errors.username && <span className="text-red-500 text-sm">{errors.username}</span>}
         </div>
 
         {/* Email */}
@@ -76,7 +76,7 @@ const [confirmPassword, setConfirmPassword] = useState('');
             required
             className="border p-2 rounded w-full"
           />
-          {error.email && <span className="text-red-500 text-sm">{error.email}</span>}
+          {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
         </div>
 
         {/* Password */}
@@ -91,7 +91,7 @@ const [confirmPassword, setConfirmPassword] = useState('');
             required
             className="border p-2 rounded w-full"
           />
-          {error.password && <span className="text-red-500 text-sm">{error.password}</span>}
+          {errors.password && <span className="text-red-500 text-sm">{errors.password}</span>}
         </div>
 
         {/* Confirm Password */}
@@ -106,7 +106,7 @@ const [confirmPassword, setConfirmPassword] = useState('');
             required
             className="border p-2 rounded w-full"
           />
-          {error.confirmPassword && <span className="text-red-500 text-sm">{error.confirmPassword}</span>}
+          {errors.confirmPassword && <span className="text-red-500 text-sm">{errors.confirmPassword}</span>}
         </div>
 
         {/* Button */}
