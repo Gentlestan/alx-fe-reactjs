@@ -18,8 +18,10 @@ const Profile = () => {
           </li>
         </ul>
       </nav>
-      <Route path="details" element={<ProfileDetails />} />
-      <Route path="settings" element={<ProfileSettings />} />
+      <Routes>
+        <Route path="details" element={<ProfileDetails />} />
+        <Route path="settings" element={<ProfileSettings />} />
+      </Routes>
     </div>
   )
 }
