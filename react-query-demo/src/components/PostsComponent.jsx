@@ -16,9 +16,11 @@ export default function PostsComponent() {
     refetch,
     isFetching,
   } = useQuery({
-    queryKey: ["posts"], // unique cache key
+    queryKey: ["posts"], // ✅ must be an array in v4
     queryFn: fetchPosts,
-    staleTime: 1000 * 60, // 1 min caching (no refetch within 1min)
+    gcTime: 1000 * 60 * 5, // ✅ replaced cacheTime (v4 uses gcTime)
+    refetchOnWindowFocus: true,
+    placeholderData: (prev) => prev, // ✅ replaced keepPreviousData
   });
 
   if (isLoading) return <p>Loading posts...</p>;
@@ -36,7 +38,7 @@ export default function PostsComponent() {
       </button>
 
       <ul className="space-y-2">
-        {posts.slice(0, 10).map((post) => (
+        {posts?.slice(0, 10).map((post) => (
           <li key={post.id} className="border p-2 rounded">
             <h3 className="font-semibold">{post.title}</h3>
             <p>{post.body}</p>
