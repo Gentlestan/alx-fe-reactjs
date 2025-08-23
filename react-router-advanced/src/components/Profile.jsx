@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import ProfileDetails from './ProfileDetails'
+import ProfileSettings from './ProfileSettings'
 
 const Profile = () => {
   return (
@@ -15,7 +18,8 @@ const Profile = () => {
           </li>
         </ul>
       </nav>
-      <Outlet />
+      <Route path="details" element={<ProfileDetails />} />
+      <Route path="settings" element={<ProfileSettings />} />
     </div>
   )
 }
