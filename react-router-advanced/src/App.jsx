@@ -23,9 +23,10 @@ function App() {
           <Route path="/blog/:id" element={<BlogPost />} />
         {/*Nested Route */}
           <Route element={<ProtectedRoute />}>
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile />}>
             <Route path="details" element={<ProfileDetails />} />
             <Route path="settings" element={<ProfileSettings />} />
+            </Route>
           </Route>
         </Routes>
       </div>
