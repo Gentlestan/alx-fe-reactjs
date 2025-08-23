@@ -18,6 +18,7 @@ export default function PostsComponent() {
   } = useQuery({
     queryKey: ["posts"], // ✅ must be an array in v4
     queryFn: fetchPosts,
+    staleTime: 1000 * 60,
     gcTime: 1000 * 60 * 5, // ✅ replaced cacheTime (v4 uses gcTime)
     refetchOnWindowFocus: true,
     placeholderData: (prev) => prev, // ✅ replaced keepPreviousData
