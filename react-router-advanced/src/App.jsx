@@ -24,8 +24,8 @@ function App() {
         {/*Nested Route */}
           <Route element={<ProtectedRoute />}>
             <Route path="/profile" element={<Profile />} />
-            <Route path="/profile/details" element={<ProfileDetails />} />
-            <Route path="/profile/settings" element={<ProfileSettings />} />
+            <Route path="details" element={<ProfileDetails />} />
+            <Route path="settings" element={<ProfileSettings />} />
           </Route>
         </Routes>
       </div>
