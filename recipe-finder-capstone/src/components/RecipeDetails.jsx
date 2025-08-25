@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const RecipeDetails = ({ recipe, onClose }) => {
+const RecipeDetails = ({ recipe, onClose, addIngredientsToShoppingList }) => {
   if (!recipe) return null;
 
   // Extract ingredients + measures
@@ -77,8 +77,20 @@ const RecipeDetails = ({ recipe, onClose }) => {
           ))}
         </ul>
 
+        {/* Add to Shopping List Button */}
+        <button
+          onClick={() =>
+            addIngredientsToShoppingList(
+              ingredients.map((ing) => ({ name: ing, quantity: "" }))
+            )
+          }
+          className="mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+        >
+          Add Ingredients to Shopping List
+        </button>
+
         {/* Instructions */}
-        <h3 className="text-2xl font-semibold mb-3 text-purple-700">👨‍🍳 Instructions</h3>
+        <h3 className="text-2xl font-semibold mb-3 text-purple-700 mt-6">👨‍🍳 Instructions</h3>
         <p className="text-gray-800 whitespace-pre-line mb-8 leading-relaxed">
           {recipe.strInstructions}
         </p>
