@@ -103,7 +103,7 @@ const App = () => {
                    text-transparent bg-clip-text bg-gradient-to-r
                    from-pink-500 via-purple-500 to-blue-500 drop-shadow-lg"
       >
-        🍲 Recipe Finder
+        🍲 Kitchen Companion
       </motion.h1>
 
       {/* Favorites & Shopping Buttons */}
