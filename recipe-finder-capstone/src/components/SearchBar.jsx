@@ -1,42 +1,45 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (query.trim() === "") return;
-    onSearch(query);
+    if (query.trim()) onSearch(query.trim());
   };
 
-   const handleChange = (e) => {
-    const value = e.target.value;
-    setQuery(value);
-
-    // If input is cleared, also clear search results
-    if (value.trim() === "") {
-      onSearch(""); 
-    }
-  }
-
- 
-
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-2 p-4">
+    <motion.form
+      onSubmit={handleSubmit}
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="flex flex-col sm:flex-row items-stretch gap-3"
+    >
+      {/* Input */}
       <input
         type="text"
-        placeholder="Search for recipes..."
         value={query}
-        onChange={handleChange}
-        className="border rounded p-2 w-full"
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search for a recipe..."
+        className="flex-1 px-4 py-2 rounded-lg border border-gray-300 
+                   focus:outline-none focus:ring-2 focus:ring-purple-400 
+                   shadow-sm"
       />
-      <button
+
+      {/* Button */}
+      <motion.button
         type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="px-6 py-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 
+                   text-white font-semibold rounded-lg shadow-md 
+                   hover:shadow-lg transition"
       >
         Search
-      </button>
-    </form>
+      </motion.button>
+    </motion.form>
   );
 };
 
