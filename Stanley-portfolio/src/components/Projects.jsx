@@ -1,6 +1,7 @@
 import React from "react";
 import { ExternalLink } from "lucide-react";
 import salesSkillHubImg from "../assets/images/salesskill.png";
+import kitchenCompanion from "../assets/images/kitchencompanion.jpg";
 
 
 const projects = [
@@ -12,14 +13,14 @@ const projects = [
     link: "https://skill-sales-hub.vercel.app/",
     image: salesSkillHubImg,
   },
-  {
-    id: 2,
-    title: "Responsive Navbar in React",
-    description:
-      "A modern and fully responsive navbar component created using React and Tailwind CSS. Perfect for scalable web apps.",
-    link: "https://github.com/yourgithub/nav-demo",
-    image: "https://via.placeholder.com/600x400?text=Responsive+Navbar",
-  },
+ {
+  id: 2,
+  title: "Kitchen Companion",
+  description:
+    "A recipe browsing and meal-planning app built with React and Tailwind CSS. Includes search, favorites, and shopping list features for a seamless cooking experience.",
+  link: "https://recipe-finder-mauve-one.vercel.app/",
+  image: kitchenCompanion,
+},
   {
     id: 3,
     title: "Shop & Checkout Page",

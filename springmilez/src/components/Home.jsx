@@ -1,8 +1,10 @@
 // src/pages/Home.jsx
-import StatBar from "../components/StatBar";
-import CTA from "../components/CTA";
+//import StatBar from "../../StatBar";
+import StatBar from "./sections/StatBar";
+import CTA from "./sections/CTA";
 import heroImg from "../assets/images/herosolar.jpeg";
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "./sections/ServiceCard";
+//import ServiceCard from "../ServiceCard";
 
 export default function Home() {
   return (
